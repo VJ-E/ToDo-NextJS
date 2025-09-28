@@ -23,13 +23,7 @@ if(!global._mongooseCache){
 
 export default async function getDBconnection(){
     if(cache.conn) return cache.conn;
-
-    // const opts = {
-    //     bufferCommands: false,
-    //     serverSelectionTimeoutMS: 1000,
-    //     socketTimeoutMS: 30000,
-    // };
-
+    
     if(!cache.promise){
         cache.promise = mongoose.connect(MONGODB_URI!);
     }
